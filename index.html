@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+     <h1>{{ title }}</h1>
+     <form @submit.prevent="addPlayer">
+       <input type="text" placeholder="" v-model="text">
+       <select v-model="game">
+        <option>Football</option>
+        <option>Basketball</option>
+        <option>Volleyball</option>
+    </select>
+    <button>Добавить</button>
+     </form>
+    <ul class="list">
+        <li>
+            <h2>Football</h2>
+            <p class="name" v-for="player in Football">{{ player.name }}</p>
+        </li>
+        <li>
+            <h2>Basketball</h2>
+            <p class="name" v-for="player in Basketball">{{ player.name }}</p>
+        </li>
+        <li>
+            <h2>Volleyball</h2>
+            <p class="name" v-for="player in Volleyball">{{ player.name }}</p>
+        </li>
+    </ul>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
